@@ -1,0 +1,12 @@
+{
+    "services": [
+        {
+            "name": "service1",
+            "port":  "2222"
+        },
+        {
+            "name": "serivce2",
+            "port": "4444"
+        }
+    ]
+}
