@@ -1,5 +1,6 @@
 import argparse as ap
 import sys
+import subprocess
 from pathlib import Path
 
 def main():
@@ -15,5 +16,13 @@ def main():
         print(f"{directory} does not exist or is not a directory")
         sys.exit(1)
 
+    results = subprocess.run(
+        ["git", "status", "--short"],
+        cwd = directory,
+        capture_output=True,
+        text=True
+    )
+    sys.exit(results.returncode)
+    
 if __name__ == "__main__":
     main()
